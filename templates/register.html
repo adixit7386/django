@@ -1,0 +1,35 @@
+<h1>SignUp Below</h1>
+{% for message in messages %} {{message}} {% endfor %}
+<form
+  action="register"
+  method="POST"
+  style="
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 300px;
+    width: 400px;
+  "
+>
+  {% csrf_token %}
+  <p>UserName</p>
+  <input type="text" placeholder="username" name="username" id="username" />
+  <p>Email</p>
+  <input type="email" placeholder="email" name="email" id="email" />
+  <p>password</p>
+  <input
+    type="password"
+    placeholder="password"
+    name="password1"
+    id="password1"
+  />
+  <p>repeat password</p>
+  <input
+    type="password"
+    placeholder="password"
+    name="password2"
+    id="password2"
+  />
+  <button type="submit">Register</button>
+</form>
